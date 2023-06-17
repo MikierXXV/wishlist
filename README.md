@@ -7,8 +7,7 @@ This is a wishlist app built with React. It allows users to add items to a wishl
 The main goal of this project was to learn how to use React. I learned how to use components, props, state, and how to pass data between components.
 ## Screenshots
 
-![Main View](https://raw.githubusercontent.com/ConnorSullivan10/react-wishlist/master/screenshots/main-view.png)
-
+![Main View](https://github.com/MikierXXV/wishlist/blob/master/public/wishlist.png)
 ## How to Run
 
 1. Clone down this repo and cd into project.
