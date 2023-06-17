@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import WishInput from "./WishInput";
+import WishList from "./WishList";
+import React, {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const wishList = [
+  {done: false, text: "A new car"},
+  {done: false, text: "A new house"},
+  {done: true, text: "A new job"},
+];
+const App = () => {
+    const [wishes, setWishes] = useState(wishList);
+    return(
+        <div className="App">
+            <header>
+                <h1>My whishlist</h1>
+            </header>
+            <main>
+                <WishInput onNewWish={wish => setWishes([...wishes, wish])}/>
+                <WishList wishes={wishes} onWishesChange={setWishes}/>
+                <button
+                    className={"wish-clear"}
+                    type={"button"}
+                    onClick={() => setWishes(wishes.filter(wish => !wish.done))}
+                >
+                    Archive done
+                </button>
+            </main>
+        </div>
+    );
 }
+
 
 export default App;
